@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Agent-Class: com.zac.exercises.playground.attach.TestAgent
+Premain-Class: com.zac.exercises.playground.attach.TestAgent
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+
+
