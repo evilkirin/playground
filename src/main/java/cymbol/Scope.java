@@ -9,14 +9,14 @@ package cymbol;
  * Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book information.
 ***/
 public interface Scope {
-    public String getScopeName();
+    String getScopeName();
 
     /** Where to look next for symbols */
-    public Scope getEnclosingScope();
+    Scope getEnclosingScope();
 
     /** Define a symbol in the current scope */
-    public void define(Symbol sym);
+    void define(Symbol sym);
 
     /** Look up name in this scope or in enclosing scope if not here */
-    public Symbol resolve(String name);
+    Symbol resolve(String name);
 }

@@ -12,9 +12,9 @@ import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
 
 public class DefPhase extends CymbolBaseListener {
-    ParseTreeProperty<Scope> scopes = new ParseTreeProperty<Scope>();
+    ParseTreeProperty<Scope> scopes = new ParseTreeProperty<>();
     GlobalScope globals;
-    Scope currentScope; // define symbols in this scope
+    private Scope currentScope; // define symbols in this scope
 
     public void enterFile(CymbolParser.FileContext ctx) {
         globals = new GlobalScope(null);
@@ -37,7 +37,7 @@ public class DefPhase extends CymbolBaseListener {
         currentScope = function;       // Current scope is now function scope
     }
 
-    void saveScope(ParserRuleContext ctx, Scope s) {
+    private void saveScope(ParserRuleContext ctx, Scope s) {
         scopes.put(ctx, s);
     }
 
